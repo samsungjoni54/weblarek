@@ -20,7 +20,7 @@ export interface IProduct {
 export type TPayment = 'card' | 'cash';
 
 export interface IBuyer {
-  payment: TPayment;
+  payment: TPayment | '';
   address: string;
   email: string;
   phone: string;

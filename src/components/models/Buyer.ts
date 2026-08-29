@@ -1,10 +1,10 @@
-import { TBuyerErrors, TPayment } from '../../types';
+import { IBuyer, TBuyerErrors, TPayment } from '../../types';
 
 export class Buyer {
-  private payment?: TPayment;
-  private address?: string;
-  private email?: string;
-  private phone?: string;
+  private payment: TPayment | '' = '';
+  private address: string = '';
+  private email: string = '';
+  private phone: string = '';
 
   setPayment(payment: TPayment): void {
     this.payment = payment;
@@ -36,12 +36,12 @@ export class Buyer {
     return errors;
   }
   clearInfo(): void {
-    this.payment = undefined;
-    this.address = undefined;
-    this.email = undefined;
-    this.phone = undefined;
+    this.payment = '';
+    this.address = '';
+    this.email = '';
+    this.phone = '';
   }
-  getData() {
+  getData(): IBuyer {
     return {
       payment: this.payment,
       address: this.address,

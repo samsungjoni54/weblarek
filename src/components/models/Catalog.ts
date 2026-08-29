@@ -1,7 +1,7 @@
 import { IProduct } from '../../types';
 
 export class Catalog {
-  private product: IProduct | undefined;
+  private product: IProduct | null = null;
   private products: IProduct[] = [];
   // Сохранения массива
   setProducts(items: IProduct[]): void {
@@ -20,7 +20,7 @@ export class Catalog {
     this.product = item;
   }
   //Сохранение выбранного товара
-  getSelectedProduct(): IProduct | undefined {
+  getSelectedProduct(): IProduct | null {
     return this.product;
   }
 }
